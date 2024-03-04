@@ -1,0 +1,11 @@
+*{
+    background-color: black;
+    font-family: 'Arial Narrow', 'Gil Sans MT', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(236, 231, 255);
+}
+
+img {
+        display: block;
+        width: 30%;
+        margin: auto;
+      }
