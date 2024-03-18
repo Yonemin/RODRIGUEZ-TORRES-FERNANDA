@@ -1,0 +1,105 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    height: 75px;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    background-image: url(../img/ink\ 1.png);
+    background-size: cover;
+}
+
+@font-face {
+    font-family: Splatoon1;
+    src: url(./Splatoon1.otf);
+  }
+
+body{
+    background-image: url(../img/dialogueboxbg.png);
+    background-size: cover;
+    font-family: Splatoon1;
+}
+
+.title1{
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.title2{
+    color: #03C1CD;
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: overline;
+    text-decoration-style: wavy;
+}
+
+.title3{
+    color: #EC0B68;
+    text-align: center;
+    margin-top: 5px;
+    text-decoration: overline;
+    text-decoration-style: wavy;
+}
+
+.title4{
+    color: #A618F8;
+    margin-top: 5px;
+    text-decoration: overline;
+    text-decoration-style: wavy;
+}
+
+.title5{
+    color: #df2916;
+    margin-top: 5px;
+    text-decoration: overline;
+    text-decoration-style: wavy;
+}
+
+.container1{
+    color: white;
+    margin-left: 45px;
+    font-size: 25px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.container2{
+    color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+}
+
+.neg{
+    margin-top: -20px;
+}
+
+.neg2{
+    margin-top: -30px;
+}
+
+a:link{
+    color: #ffffff;
+}
+
+a:visited{
+    color: rgb(255, 255, 255);
+}
+
+.end a:hover{
+    color: rgb(131, 15, 29);
+}
+
+.end{
+    text-align: center;
+    margin-bottom: 20px;
+}
