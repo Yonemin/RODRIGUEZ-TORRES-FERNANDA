@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+}
+
+body{
+    background-image: url(../imagen/Kenshi\ Yonezu.webp);
+    background-size: cover;
+    color: rgb(194, 154, 230);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.userlogin{
+    background-color: rgba(255, 255, 255, 0.336);
+    width: 600px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px solid rgb(250, 136, 199);
+    margin-top: 10%;
+}
+
+.title{
+    font-size: 28px;
+    font-style: italic;
+    color:#440e16;
+    float:inherit;
+}
+
+.userid{
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 5px;
+
+    height: 25px;
+    width: 300px;
+    border: solid 2px #440e16;
+    border-radius: 10px;
+}
+
+.buttons{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.buttons button{
+    border-radius: 15px;
+    width: 130px;
+    height: 35px;
+}
+
+.buttons img{
+    width: 15px;
+    height: 15px;
+}
+
+.olvidar{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
