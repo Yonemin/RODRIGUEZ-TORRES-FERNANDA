@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comision</title>
+    <link rel="stylesheet" href="./css/style2.css">
+    <script src="./js/validacion2.js"></script>
+</head>
+<body>
+    <form method="post" name="formulario" action="" onsubmit="return calculo(this)">
+        <br>
+        <br>
+        <p>Para conocer su ganancia por comisiones, al igual que su sueldo bruto, ingrese los siguientes datos:</p>
+        <br>
+        <br>
+        <p>Ganancia de...</p>
+        <label>Primer venta:&nbsp&nbsp&nbsp</label>
+        <input type="number" min="0" max="10000000000000000" step="0.1" name="venta1">
+        <br>
+        <label>Segunda venta:</label>
+        <input type="number" min="0" max="10000000000000000" step="0.1" name="venta2">
+        <br>
+        <label>Tercera venta:&nbsp&nbsp</label>
+        <input type="number" min="0" max="10000000000000000" step="0.1" name="venta3">
+        <br>
+        <br>
+        <label>Sueldo base:&nbsp&nbsp&nbsp&nbsp</label>
+        <input type="number" min="0" max="10000000000000000" step="0.1" name="sueldo">
+        <br>
+        <br>
+        <input class="ii" type="submit" name="enviar" value="Aceptar">
+        <input class="ii" type="reset" name="borrar" value="Borrar">
+    </form>
+</body>
+</html>
