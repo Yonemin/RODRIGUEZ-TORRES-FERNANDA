@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganancia</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/validacion.js"></script>
+</head>
+<body>
+    <header>
+        <br>
+        <img src="./img/Citibanamex_logo.svg.png" width="500px">
+        <br>
+    </header>
+    <section>
+        <br>
+        <br>
+        <p>Bienvenido, aquí podrá saber cuánto dinero ganará mensualmente si invierte en nuestro banco. Favor de utilizar solo números enteros.</p>
+        <br>
+    <form method="post" name="formulario" action="" onsubmit="return validar(this)">
+        <label>Cantidad que va a invertir:</label>
+        <input type="number" name="cdinero">
+        <br>
+        <input class="ii" type="submit" name="enviar" value="Aceptar">
+        <input class="ii" type="reset" name="borrar" value="Borrar">
+    </form>
+    </section>
+</body>
+</html>
