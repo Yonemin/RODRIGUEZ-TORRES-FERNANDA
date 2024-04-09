@@ -25,3 +25,28 @@ section{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top: 5px;
 }
+
+.iii{
+    width: 70px;
+    height: 25px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5px;
+    margin-left: 470px;
+}
+
+.iiii{
+    width: 120px;
+    height: 25px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5px;
+    margin-left: 425px;
+}
+
+.inp{
+    width: 365px;
+    height: 18px;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

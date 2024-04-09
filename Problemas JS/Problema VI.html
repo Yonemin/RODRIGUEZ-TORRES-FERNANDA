@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edad</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/validacion6.js"></script>
+</head>
+<body>
+    <section>
+    <form method="post" name="formulario" action="" onsubmit="return">
+        <br>
+        <br>
+        <br>
+        <label>Para conocer su edad, ingrese el año en que nació:</label>
+        <input type="text" name="anac" id="anac" min="0" max="2024" onkeypress="return validarn(event)">
+        <br>
+        <input class="iii" type="submit" name="aceptar" id="aceptar" value="Aceptar" onclick="calculo()">
+        <br>
+        <br>
+        <label>Su edad actual es:</label>
+        <input class="inp" type="text" name="ed" id="ed" readonly="readonly" class="imput_text">
+        <input class="iiii" type="reset" name="borrar" value="Borrar Datos">
+    </form>
+    </section>
+</body>
+</html>

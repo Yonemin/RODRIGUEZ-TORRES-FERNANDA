@@ -16,4 +16,3 @@ function porcentajes(){
     porm=(pm*100)/total;
     document.getElementById("porc").value = porh+"% y "+porm+"%";
 }
-
