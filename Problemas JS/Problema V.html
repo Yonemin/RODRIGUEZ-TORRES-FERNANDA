@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteo</title>
+    <link rel="stylesheet" href="./css/style3.css">
+    <script src="./js/validacion5.js"></script>
+</head>
+<body>
+    <form method="post" name="formulario" action="" onsubmit="return ">
+        <br>
+        <p>Para conocer el porcentaje de hombres y de mujeres que hay en su salón, conteste lo siguiente:</p>
+        <br>
+        <label>Cantidad de hombres: </label>
+        <input type="text" min="0" id="hombres" onkeypress="return validarn(event)">
+        <br>
+        <label>Cantidad de mujeres:&nbsp</label>
+        <input type="text" min="0" id="mujeres" onkeypress="return validarn(event)">
+        <br>
+        <input class="iii" type="submit" name="enviar" value="Obtener Porcentaje" onclick="porcentajes()">
+        <br>
+        <br>
+        El porcentaje de hombres y mujeres es respectivamente de:
+        <input type="text" name="porc" id="porc" readonly="readonly" class="imput_text"></input>
+        <br>
+        <input class="iii" type="reset" name="borrar" value="Borrar Datos">
+    </form>
+</body>
+</html>
