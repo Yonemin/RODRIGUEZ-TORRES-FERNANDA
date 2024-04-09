@@ -8,7 +8,7 @@
     <script src="./js/val4.js"></script>
 </head>
 <body>
-    <form method="post" name="formulario" action="" onsubmit="return calificacionfinal(this)">
+    <form method="post" name="formulario" action="">
         <br>
         <p>Ingresa las calificaciones solicitadas para conocer tu calificación final:</p>
         <br>
@@ -27,7 +27,7 @@
         <label>Calificación Trabajo Final:&nbsp&nbsp&nbsp&nbsp&nbsp</label>
         <input type="number" min="0" max="10" step="0.1" name="tf">
         <br>
-        <input class="iii" type="submit" name="enviar" value="Ver Calificación">
+        <input class="iii" type="submit" name="enviar" value="Ver Calificación" onclick="calfinal();">
         <input class="iii" type="reset" name="borrar" value="Borrar Datos">
     </form>
 </body>
