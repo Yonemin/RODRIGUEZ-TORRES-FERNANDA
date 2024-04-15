@@ -1,0 +1,29 @@
+.aaa{
+    background-color: black;
+    color: rgb(176, 92, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+td{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.problema-input{
+    width: 280px;
+}
+
+.problema-button{
+    background-color: aqua;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h2{
+    color: rgb(255, 0, 64);
+}
+
+.problema-output{
+    color: rgb(225, 255, 0);
+}
