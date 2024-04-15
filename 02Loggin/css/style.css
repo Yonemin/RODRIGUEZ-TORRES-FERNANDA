@@ -1,0 +1,144 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(27, 27, 26, 0.788);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*Primera parte del navegador*/
+h1{
+  color: white;
+  font-size: 45px;
+}
+
+.imgH{
+  width: 110px;
+  height: 110px;
+  margin: 10px;
+}
+.ima2 {
+  margin-left: 10px;
+  margin-right: 100px;
+  align-self: left;
+  width: 150px;
+  height: 90px;
+  border-color: #00000000;
+  align-self: right;
+ 
+} 
+
+div.inicial{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Del navegador*/
+.navegacion a{
+  position: relative;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navegacion a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform .5s;
+}
+
+.navegacion a:hover::after {
+  transform: scaleX(1);
+}
+
+.navegacion .btnI{
+  width: 150px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  
+  transition: .5s;
+}
+
+.navegacion .btnI:hover {
+  background: #fff;
+  color: black;
+}
+  @media screen and (max-width: 500px){
+    .container{
+        width: 80%;
+    }
+  }
+  
+  body{
+      
+    background: linear-gradient(rgba(64, 64, 66, 0.295),rgba(48, 49, 51, 0.26)), url(../img/batiz-transformed.jpeg);
+    background-size: cover;
+    font-family: monserrat;
+    color: rgb(0, 0, 0);
+    height: 100vh;
+    height: 800px;
+  }
+      
+ 
+  .contacto2 i{
+      font-size: 40px;
+      margin-left: 15px;
+      align-self: center;
+      margin-right: 30px;
+    }
+  .letra1{
+      font-size: 50px; 
+        font-style:italic;
+        color: rgb(255, 255, 255);
+        align-self: center;
+        margin-left: 30pxpx;
+       
+    }
+
+   
+    aside{
+      height: 700px;
+    }
+  footer{
+    background-color: rgba(27, 27, 26, 0.788);
+     
+      clear: both;
+      height: 100px;
+  }
+  
+  .ima1{
+    margin-left: 50px;
+    margin-right: 50px;
+    align-self: left;
+    width: 95px;
+    height: 95px;
+    border-color: #00000000;
+    align-self: left;
+    }
+    
+  
