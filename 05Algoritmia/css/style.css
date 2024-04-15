@@ -12,11 +12,15 @@ td{
 }
 
 .problema-input{
-    width: 280px;
+    width: 305px;
 }
 
 .problema-button{
     background-color: aqua;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -25,5 +29,6 @@ h2{
 }
 
 .problema-output{
+    font-size: 15px;
     color: rgb(225, 255, 0);
 }

@@ -49,5 +49,22 @@ function problema2(){
 }
 
 function problema3(){
-    
+    const palabraz = document.querySelector('#p3-input').value;
+    let mayor = 0;
+    let diferentes = '';
+    let regex = /\s/g;
+    if (regex.test(palabraz)) {
+        alert("No ingrese espacios, utilice comas para separar las palabras.")
+    }
+    else{
+        const separacion = palabraz.split(',');
+        separacion.forEach(palabra => { 
+            const carac = new Set(palabra.split('')).size; 
+            if(carac > mayor){ 
+                mayor = carac; 
+                diferentes = palabra;
+            } 
+        }); 
+    }
+    document.querySelector('#p3-output').textContent = `La palabra con mayor cantidad de carácteres únicos es: ${diferentes}`;
 }
