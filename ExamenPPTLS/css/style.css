@@ -35,12 +35,20 @@ h1{
   color: rgb(102, 153, 247);
 }
 
+.j1-input{
+  color: white;
+}
+
+.j1-input::selection{
+  color: white;
+}
+
 .jugador-2{
   width: 45%;
   text-align: center;
   float: right;
-  margin-top: -61px;
-  margin-right: 30px;
+  margin-top: -104px;
+  margin-right: 60px;
   color: deeppink;
 }
 
@@ -52,6 +60,10 @@ h1{
 .j2-output{
   font-size: large;
   margin-top: 10px;
+}
+
+.jugadores{
+  margin-bottom: 50px;
 }
 
 /*Todo lo del botón :D*/

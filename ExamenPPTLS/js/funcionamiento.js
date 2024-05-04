@@ -13,23 +13,10 @@ si tardan más se invalida su turno
 *- El sistema debe reflejar en pantalla quién ganó y quién perdió
 */
 
-var codjugadap1 = {
-    PIEDRA: 119,
-    PAPEL: 97,
-    TIJERA: 115,
-    LAGARTO: 100,
-    SPOCK:122
-};
+var opcionesJ1 = [7, 8, 4, 5, 1];
+var opcionesJ2 = ['w', 'a', 's', 'd', 'z'];
 
-var codjugadap2 = {
-    PIEDRA: 55,
-    PAPEL: 56,
-    TIJERA: 52,
-    LAGARTO: 53,
-    SPOCK:49
-};
-
-/*Combinaciones posibles*/
+/*Combinaciones posibles
 var P1P2Empate_1 = (evento.which === codjugadap1.PIEDRA) && (codjugadap2.PIEDRA);
 var P1P2Empate_2 = (evento.which === codjugadap1.PAPEL) && (codjugadap2.PAPEL);
 var P1P2Empate_3 = (evento.which === codjugadap1.TIJERA) && (codjugadap2.TIJERA);
@@ -57,6 +44,7 @@ var P1PierP2Gan_7 = (evento.which === codjugadap2.TIJERA) && (codjugadap1.LAGART
 var P1PierP2Gan_8 = (evento.which === codjugadap2.LAGARTO) && (codjugadap1.PAPEL);
 var P1PierP2Gan_9 = (evento.which === codjugadap2.PAPEL) && (codjugadap1.SPOCK);
 var P1PierP2Gan_10 = (evento.which === codjugadap2.SPOCK) && (codjugadap1.PIEDRA);
+*/
 
 var PuntajeP1=0;
 var PuntajeP2=0;
@@ -107,11 +95,9 @@ function tiempoEspera(){
     setTimeout(unSegundo, 2000)
     setTimeout(ceroSegundos,3000);
     setTimeout(detectarJugadas, 3000);
-    setTimeout(agregarPuntos, 4000);
+    setTimeout(agregarPuntos, 4000, PuntajeP1, PuntajeP2);
     setTimeout(Espera, 4000);
 }
-
-agregarPuntos(masPuntajeP1, masPuntajeP2);
 
 function tresSegundos(){
     document.querySelector('#SigRonda').textContent = `Siguiente ronda en 3`
