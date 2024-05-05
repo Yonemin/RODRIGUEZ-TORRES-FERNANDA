@@ -7,7 +7,7 @@ si tardan más se invalida su turno
 - El sistema mostrará en pantalla una imagen con la opción elegida
 *- En base a la opción que elijan, el sistema debe comparar lo que eligió cada juagdor y darle su punto a quien corresponda
 *- Si se obtiene un punto, el sistema debe agregar el puntaje correspondido al que se lo haya ganado
-- El sistema debe de mostrar en pantalla el puntaje de cada jugador y actualizarlo después de cada ronda
+*- El sistema debe de mostrar en pantalla el puntaje de cada jugador y actualizarlo después de cada ronda
 *- El sistema debe terminar el juego después de las 3 rondas establecidas
 *- El sistema debe reconocer cuál jugador ganó
 *- El sistema debe reflejar en pantalla quién ganó y quién perdió
@@ -19,39 +19,43 @@ var masPuntajeP1 = 0;
 var masPuntajeP2 = 0;
 var jugadaP1=0;
 var jugadaP2=0;
-let opciones = new Array( 1, 2, 3, 4, 5);
+var opciones = new Array( 1, 2, 3, 4, 5);
 
 function obtenerValores(){
     jugadaP1 = document.querySelector('#p1-input').value;
     alert("Jugada P1 "+jugadaP1)
 }
 
-function compararJugadas_w(){
+function compararJugadas_1(){
     alert("entra")
-    let rnd = Math.random();
-    let jugadaP2 = Math.floor(rnd*(opciones.length));
+    var rnd = Math.random();
+    jugadaP2 = Math.floor(rnd*(opciones.length));
     alert("Jugada P2 "+jugadaP2)
-    if(document.querySelector('#p1-input').value='w'){
-        if(jugadaP2=="1"){
+    if(document.querySelector('#p1-input').value=="1"){
+        if(jugadaP2=="0"){
             alert(Empate)
-        }else if(jugadaP2=="2"){
-            alert('2');
+        }else if(jugadaP2=="1"){
             PuntajeP2=PuntajeP2+1;
             document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
-        }else if(jugadaP2=="3"){
-            alert('3');
+        }else if(jugadaP2=="2"){
             PuntajeP1+=1;
             document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
-        }else if(jugadaP2=="4"){
-            alert('4');
+        }else if(jugadaP2=="3"){
             PuntajeP1=PuntajeP1+1;
             document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
-        }else if(jugadaP2=="5"){
-            alert('5');
+        }else if(jugadaP2=="4"){
             PuntajeP2=PuntajeP2+1;
             document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
         }
-    }else if(document.querySelector('#p1-input').value===undefined){
+    }else if(document.querySelector('#p1-input').value == "2"){
+        compararJugadas_2(jugadaP2);
+    }else if(document.querySelector('#p1-input').value == "3"){
+        compararJugadas_3(jugadaP2);
+    }else if(document.querySelector('#p1-input').value == "4"){
+        compararJugadas_4(jugadaP2);
+    }else if(document.querySelector('#p1-input').value == "5"){
+        compararJugadas_5(jugadaP2);
+    }else if(document.querySelector('#p1-input').value < 1 || document.querySelector('#p1-input').value > 5){
         alert("Jugada inválida")
     }else{
         alert("Jugada inválida")
@@ -65,21 +69,92 @@ function mostrarEleccionP1(){
 
         }
     })
+}*/
+
+function compararJugadas_2(){
+        if(jugadaP2=="0"){
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else if(jugadaP2=="1"){
+            document.querySelector('#p1-invalido').textContent = 'Empate';
+            document.querySelector('#p2-invalido').textContent = 'Empate';
+        }else if(jugadaP2=="2"){
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else if(jugadaP2=="3"){
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else if(jugadaP2=="4"){
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else{
+            alert("Jugada inválida")
+        }
 }
 
-function agregarPuntos(){
-    alert("aqui entra")
-    if(masPuntajeP1=1){
-        alert("Mas 1 "+masPuntajeP1)
-        PuntajeP1+=1;
-        document.querySelector('#p1-output').textContent = `Puntuación: `+PuntajeP1;
-    }else if(masPuntajeP2=1){
-        alert("Mas 2" +masPuntajeP2)
-        PuntajeP2+=1;
-        document.querySelector('#p2-output').textContent = `Puntuación: `+PuntajeP2;
-    }
+function compararJugadas_3(){
+        if(jugadaP2=="0"){
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else if(jugadaP2=="1"){
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else if(jugadaP2=="2"){
+            document.querySelector('#p1-invalido').textContent = 'Empate';
+            document.querySelector('#p2-invalido').textContent = 'Empate';
+        }else if(jugadaP2=="3"){
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else if(jugadaP2=="4"){
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else{
+            alert("Jugada inválida")
+        }
 }
-*/
+
+function compararJugadas_4(){
+        if(jugadaP2=="0"){
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else if(jugadaP2=="1"){
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else if(jugadaP2=="2"){
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else if(jugadaP2=="3"){
+            document.querySelector('#p1-invalido').textContent = 'Empate';
+            document.querySelector('#p2-invalido').textContent = 'Empate';
+        }else if(jugadaP2=="4"){
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else{
+            alert("Jugada inválida")
+        }
+}
+
+function compararJugadas_5(){
+    alert("entra de")
+        if(jugadaP2=="0"){
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else if(jugadaP2=="1"){
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else if(jugadaP2=="2"){
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else if(jugadaP2=="3"){
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else if(jugadaP2=="4"){
+            document.querySelector('#p1-invalido').textContent = 'Empate';
+            document.querySelector('#p2-invalido').textContent = 'Empate';
+        }else{
+            alert("Jugada inválida")
+        }
+}
 
 function tiempoEspera(){
     tresSegundos();
@@ -88,7 +163,7 @@ function tiempoEspera(){
     setTimeout(ceroSegundos,3000);
     setTimeout(obtenerValores, 5000);
     setTimeout(Espera, 5000);
-    setTimeout(compararJugadas_w, 7000);
+    setTimeout(compararJugadas_1, 6000);
 }
 
 function tresSegundos(){
