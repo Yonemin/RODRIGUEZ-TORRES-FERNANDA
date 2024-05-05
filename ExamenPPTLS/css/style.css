@@ -39,10 +39,6 @@ h1{
   color: rgb(89, 0, 255);
 }
 
-.j1-input::selection{
-  color: white;
-}
-
 .jugador-2{
   width: 45%;
   text-align: center;
