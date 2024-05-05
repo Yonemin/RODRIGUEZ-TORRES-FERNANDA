@@ -36,7 +36,7 @@ h1{
 }
 
 .j1-input{
-  color: white;
+  color: rgb(89, 0, 255);
 }
 
 .j1-input::selection{
@@ -64,6 +64,10 @@ h1{
 
 .jugadores{
   margin-bottom: 50px;
+}
+
+.j1-invalido{
+  color: black;
 }
 
 /*Todo lo del botón :D*/

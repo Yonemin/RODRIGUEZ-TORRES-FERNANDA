@@ -13,59 +13,153 @@ si tardan más se invalida su turno
 *- El sistema debe reflejar en pantalla quién ganó y quién perdió
 */
 
-var opcionesJ1 = [7, 8, 4, 5, 1];
-var opcionesJ2 = ['w', 'a', 's', 'd', 'z'];
-
-/*Combinaciones posibles
-var P1P2Empate_1 = (evento.which === codjugadap1.PIEDRA) && (codjugadap2.PIEDRA);
-var P1P2Empate_2 = (evento.which === codjugadap1.PAPEL) && (codjugadap2.PAPEL);
-var P1P2Empate_3 = (evento.which === codjugadap1.TIJERA) && (codjugadap2.TIJERA);
-var P1P2Empate_4 = (evento.which === codjugadap1.LAGARTO) && (codjugadap2.LAGARTO);
-var P1P2Empate_5 = (evento.which === codjugadap1.SPOCK) && (codjugadap2.SPOCK);
-
-var P1GanP2Pier_1 = (evento.which === codjugadap1.PIEDRA) && (codjugadap2.TIJERA);
-var P1GanP2Pier_2 = (evento.which === codjugadap1.TIJERA) && (codjugadap2.PAPEL);
-var P1GanP2Pier_3 = (evento.which === codjugadap1.PAPEL) && (codjugadap2.PIEDRA);
-var P1GanP2Pier_4 = (evento.which === codjugadap1.PIEDRA) && (codjugadap2.LAGARTO);
-var P1GanP2Pier_5 = (evento.which === codjugadap1.LAGARTO) && (codjugadap2.SPOCK);
-var P1GanP2Pier_6 = (evento.which === codjugadap1.SPOCK) && (codjugadap2.TIJERA);
-var P1GanP2Pier_7 = (evento.which === codjugadap1.TIJERA) && (codjugadap2.LAGARTO);
-var P1GanP2Pier_8 = (evento.which === codjugadap1.LAGARTO) && (codjugadap2.PAPEL);
-var P1GanP2Pier_9 = (evento.which === codjugadap1.PAPEL) && (codjugadap2.SPOCK);
-var P1GanP2Pier_10 = (evento.which === codjugadap1.SPOCK) && (codjugadap2.PIEDRA);
-
-var P1PierP2Gan_1 = (evento.which === codjugadap2.PIEDRA) && (codjugadap1.TIJERA);
-var P1PierP2Gan_2 = (evento.which === codjugadap2.TIJERA) && (codjugadap1.PAPEL);
-var P1PierP2Gan_3 = (evento.which === codjugadap2.PAPEL) && (codjugadap1.PIEDRA);
-var P1PierP2Gan_4 = (evento.which === codjugadap2.PIEDRA) && (codjugadap1.LAGARTO);
-var P1PierP2Gan_5 = (evento.which === codjugadap2.LAGARTO) && (codjugadap1.SPOCK);
-var P1PierP2Gan_6 = (evento.which === codjugadap2.SPOCK) && (codjugadap1.TIJERA);
-var P1PierP2Gan_7 = (evento.which === codjugadap2.TIJERA) && (codjugadap1.LAGARTO);
-var P1PierP2Gan_8 = (evento.which === codjugadap2.LAGARTO) && (codjugadap1.PAPEL);
-var P1PierP2Gan_9 = (evento.which === codjugadap2.PAPEL) && (codjugadap1.SPOCK);
-var P1PierP2Gan_10 = (evento.which === codjugadap2.SPOCK) && (codjugadap1.PIEDRA);
-*/
-
 var PuntajeP1=0;
 var PuntajeP2=0;
 var masPuntajeP1 = 0;
 var masPuntajeP2 = 0;
+var jugadaP1=0;
+var jugadaP2=0;
 
-function detectarJugadas(){
-    document.body.onkeydown=(function(evento){
-        if(evento.which===P1P2Empate_1 || evento.which===P1P2Empate_2 || evento.which===P1P2Empate_3 || evento.which===P1P2Empate_4 || evento.which===P1P2Empate_5){
-            masPuntajeP1=0;
-            masPuntajeP2=0;
-        }else if(evento.which===P1GanP2Pier_1 || evento.which===P1GanP2Pier_2 || evento.which===P1GanP2Pier_3 || evento.which===P1GanP2Pier_4 || evento.which===P1GanP2Pier_5 || evento.which===P1GanP2Pier_6 || evento.which===P1GanP2Pier_7 || evento.which===P1GanP2Pier_8 || evento.which===P1GanP2Pier_9 || evento.which===P1GanP2Pier_10){
-            masPuntajeP1=1;
-            masPuntajeP2=0;
-        }else if(evento.which===P1PierP2Gan_1 || evento.which===P1PierP2Gan_2 || evento.which===P1PierP2Gan_3 || evento.which===P1PierP2Gan_4 || evento.which===P1PierP2Gan_5 || evento.which===P1PierP2Gan_6 || evento.which===P1PierP2Gan_7 || evento.which===P1PierP2Gan_8 || evento.which===P1PierP2Gan_9 || evento.which===P1PierP2Gan_10){
-            masPuntajeP1=0;
-            masPuntajeP2=1;
-        }
-        return masPuntajeP1, masPuntajeP2;
-    });
+function obtenerValores(){
+    jugadaP1 = document.querySelector('#p1-input').value;
+    jugadaP2 = document.querySelector('#p2-input').value;
+    alert(jugadaP1)
+    alert(jugadaP2)
+    if(jugadaP1===null){
+        alert("Jugador 1, jugada inválida")
+    }else if(jugadaP2=0 || jugadaP2===null){
+        alert("Jugador 2, jugada inválida")
+    }else{
+        compararJugadas(jugadaP1, jugadaP2);
+    }
 }
+
+function compararJugadas(){
+        switch(jugadaP1){
+            case jugadaP1='w':
+                if(jugadaP2=7){
+                    masPuntajeP1=0;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=8){
+                    masPuntajeP1=1;
+                    masPuntajeP2=1;
+                }else if(jugadaP2=4){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=5){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=1){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else {
+                    mostrarEntradaInvalida(jugadaP1, jugadaP2);
+                }
+                break;
+            case jugadaP1='a':
+                if(jugadaP2=7){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=8){
+                    masPuntajeP1=0;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=4){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else if(jugadaP2=5){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else if(jugadaP2=1){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else {
+                    mostrarEntradaInvalida(jugadaP1, jugadaP2);
+                }
+                break;
+            case jugadaP1='s':
+                if(jugadaP2=7){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else if(jugadaP2=8){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=4){
+                    masPuntajeP1=0;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=5){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=1){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else {
+                    mostrarEntradaInvalida(jugadaP1, jugadaP2);
+                }
+                break;
+            case jugadaP1='d':
+                if(jugadaP2=7){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else if(jugadaP2=8){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=4){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else if(jugadaP2=5){
+                    masPuntajeP1=0;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=1){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else {
+                    mostrarEntradaInvalida(jugadaP1, jugadaP2);
+                }
+                break;
+            case jugadaP1='z':
+                if(jugadaP2=7){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=8){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else if(jugadaP2=4){
+                    masPuntajeP1=1;
+                    masPuntajeP2=0;
+                }else if(jugadaP2=5){
+                    masPuntajeP1=0;
+                    masPuntajeP2=1;
+                }else if(jugadaP2=1){
+                    masPuntajeP1=0;
+                    masPuntajeP2=0;
+                }else {
+                    mostrarEntradaInvalida(jugadaP1, jugadaP2);
+                }
+                break;
+                case jugadaP1===null:
+                    alert("Jugada inválida")
+                    break;
+            default:
+                mostrarEntradaInvalida(jugadaP1, jugadaP2);
+                break;
+        }
+        alert(masPuntajeP1);
+        alert(masPuntajeP2);
+        agregarPuntos(masPuntajeP1, masPuntajeP2);
+}
+
+function mostrarEntradaInvalida(){
+    if(jugadaP1!='w' || jugadaP1!='a' || jugadaP1!='s' || jugadaP1!='d' || jugadaP1!='z'){
+        alert("Jugada inválida")
+    }else if(jugadaP2!=8 || jugadaP2!=7 || jugadaP2!=4 || jugadaP2!=5 || jugadaP2!=1){
+        alert("Jugada inválida")
+    }else if(jugadaP1 === null){
+        alert("Jugada inválida")
+    }else if(jugadaP2 === null){
+        alert("Jugada inválida")
+    }
+}
+
 /*
 function mostrarEleccionP1(){
     document.body.onkeydown=(function(evento){
@@ -79,10 +173,12 @@ PuntajeP1=0;
 PuntajeP2=0;
 
 function agregarPuntos(){
-    if(masPuntajeP1=1){
+    alert(masPuntajeP1)
+    alert(masPuntajeP2)
+    if((masPuntajeP1=1) && (masPuntajeP2=0)){
         PuntajeP1+=1;
         document.querySelector('#p1-output').textContent = `Puntuación: `+PuntajeP1;
-    }else if(masPuntajeP2=1){
+    }else if((masPuntajeP1=0) && (masPuntajeP2=1)){
         PuntajeP2+=1;
         document.querySelector('#p2-output').textContent = `Puntuación: `+PuntajeP2;
     }
@@ -94,9 +190,8 @@ function tiempoEspera(){
     setTimeout(dosSegundos, 1000);
     setTimeout(unSegundo, 2000)
     setTimeout(ceroSegundos,3000);
-    setTimeout(detectarJugadas, 3000);
-    setTimeout(agregarPuntos, 4000, PuntajeP1, PuntajeP2);
-    setTimeout(Espera, 4000);
+    setTimeout(obtenerValores, 8000);;
+    setTimeout(Espera, 8000);
 }
 
 function tresSegundos(){
@@ -113,4 +208,6 @@ function ceroSegundos(){
 }
 function Espera(){
     document.querySelector('#SigRonda').textContent = `Espera...`
+    alert(jugadaP1)
+    alert(jugadaP2)
 }
