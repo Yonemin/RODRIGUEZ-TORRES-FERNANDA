@@ -19,39 +19,42 @@ var masPuntajeP1 = 0;
 var masPuntajeP2 = 0;
 var jugadaP1=0;
 var jugadaP2=0;
-let opciones = new Array( 0, 1, 2, 3, 4) ;
+let opciones = new Array( 1, 2, 3, 4, 5);
 
 function obtenerValores(){
     jugadaP1 = document.querySelector('#p1-input').value;
-    let rnd = Math.random();
-    let jugadaP2 = Math.floor(rnd*(opciones.length));
-    alert(jugadaP1)
-    alert(jugadaP2)
-    if(jugadaP1===null){
-        alert("Jugador 1, jugada inválida")
-    }else{
-        compararJugadas_w(jugadaP1, jugadaP2);
-    }
+    alert("Jugada P1 "+jugadaP1)
 }
 
 function compararJugadas_w(){
-    if(jugadaP1='w'){
-        if(jugadaP2=0){
+    alert("entra")
+    let rnd = Math.random();
+    let jugadaP2 = Math.floor(rnd*(opciones.length));
+    alert("Jugada P2 "+jugadaP2)
+    if(document.querySelector('#p1-input').value='w'){
+        if(jugadaP2=="1"){
             alert(Empate)
-        }else if(jugadaP2=1){
-            masPuntajeP1=0;
-            masPuntajeP2=1;
-        }else if(jugadaP2=2){
-            masPuntajeP1=1;
-        }else if(jugadaP2=3){
-            masPuntajeP1=1;
-        }else if(jugadaP2=4){
-            masPuntajeP2=1;
-        }else if(jugadaP1===null){
-            alert("Jugada inválida")
-        }else{
-            alert("Jugada inválida")
+        }else if(jugadaP2=="2"){
+            alert('2');
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
+        }else if(jugadaP2=="3"){
+            alert('3');
+            PuntajeP1+=1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else if(jugadaP2=="4"){
+            alert('4');
+            PuntajeP1=PuntajeP1+1;
+            document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
+        }else if(jugadaP2=="5"){
+            alert('5');
+            PuntajeP2=PuntajeP2+1;
+            document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
         }
+    }else if(document.querySelector('#p1-input').value===undefined){
+        alert("Jugada inválida")
+    }else{
+        alert("Jugada inválida")
     }
 }
 
@@ -62,31 +65,30 @@ function mostrarEleccionP1(){
 
         }
     })
-}*/
-
-PuntajeP1=0;
-PuntajeP2=0;
+}
 
 function agregarPuntos(){
-    alert(masPuntajeP1)
-    alert(masPuntajeP2)
-    if((masPuntajeP1=1) && (masPuntajeP2=0)){
+    alert("aqui entra")
+    if(masPuntajeP1=1){
+        alert("Mas 1 "+masPuntajeP1)
         PuntajeP1+=1;
         document.querySelector('#p1-output').textContent = `Puntuación: `+PuntajeP1;
-    }else if((masPuntajeP1=0) && (masPuntajeP2=1)){
+    }else if(masPuntajeP2=1){
+        alert("Mas 2" +masPuntajeP2)
         PuntajeP2+=1;
         document.querySelector('#p2-output').textContent = `Puntuación: `+PuntajeP2;
     }
-    return PuntajeP1, PuntajeP2;
 }
+*/
 
 function tiempoEspera(){
     tresSegundos();
     setTimeout(dosSegundos, 1000);
     setTimeout(unSegundo, 2000)
     setTimeout(ceroSegundos,3000);
-    setTimeout(obtenerValores, 5000);;
+    setTimeout(obtenerValores, 5000);
     setTimeout(Espera, 5000);
+    setTimeout(compararJugadas_w, 7000);
 }
 
 function tresSegundos(){
@@ -103,6 +105,4 @@ function ceroSegundos(){
 }
 function Espera(){
     document.querySelector('#SigRonda').textContent = `Espera...`
-    alert(jugadaP1)
-    alert(jugadaP2)
 }
