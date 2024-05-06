@@ -12,13 +12,14 @@
         <h1>Piedra, papel, tijera, lagarto, Spock</h1>
         <br>
         <br>
+        <h3>Instrucciones generales:</h3>
         <p>Las tijeras cortan el papel, el papel envuelve la piedra, la piedra aplasta al lagarto,
          el lagarto envenena a Spock, Spock aplasta las tijeras, las tijeras decapitan al lagarto, 
          el lagarto devora el papel, el papel desaprueba a Spock, Spock desintegra la piedra y, 
          como siempre, la piedra aplasta las tijeras.
         </p>
         <br>
-        <p class="control">El Jugador 1 podrá elegir su arma con w(piedra), a(papel), s(tijeras), d(lagarto), z(Spock)</p>
+        <p class="control">Puedes elegir con qué jugar al poner en la barra: 1 para piedra, 2 para papel, 3 para tijeras, 4 para lagarto, 5 para Spock.</p>
     </div>
     <br>
     <div class="starting">
@@ -28,13 +29,11 @@
         </section>
     </div>
     <br>
-    <br>
     <div class="espera">
         <article>
             <pre id="SigRonda" class="j1-output">Espera...</pre>
             <br>
             <pre id="NumRonda" class="j1-output"Ronda 1></pre>
-            <br>
             <br>
             <br>
         </article>
@@ -49,17 +48,21 @@
             <br>
             <input type="text" class="j1-input" id="p1-input">
             <br>
+            <br>
+            <img id="imgP1" width="200px" height="200px" src="./img/void.png">
         </article>
     </div>
     <div class="jugador-2">
-        <aside>
+        <article>
             <h2>Jugador 2</h2>
             <pre class="j2-output" id="p2-output">Puntuación: 0</pre>
             <br>
             <pre class="j1-invalido" id="p2-invalido"></pre>
             <br>
             <br>
-        </aside>
+            <br>
+            <img id="imgP2" width="200px" height="200px" src="./img/void.png">
+        </article>
     </div>
 </div>
     <script src="./js/funcionamiento.js"></script>

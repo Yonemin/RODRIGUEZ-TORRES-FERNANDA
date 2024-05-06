@@ -59,17 +59,7 @@ function compararJugadas_1(){
     }else{
         alert("Jugada inválida")
     }
-    rfkgkjñ=dnjf49-fji59=dnjfj;
 }
-
-/*
-function mostrarEleccionP1(){
-    document.body.onkeydown=(function(evento){
-        if(evento.which===codigosDireccion.ARRIBA || evento.which===codigosDireccion.ABAJO || evento.which===codigosDireccion.IZQUIERDA || evento.which===codigosDireccion.DERECHA){
-
-        }
-    })
-}*/
 
 function compararJugadas_2(){
         if(jugadaP2=="0"){
@@ -161,16 +151,17 @@ function tiempoEspera(){
         setTimeout(dosSegundos, 1000);
         setTimeout(unSegundo, 2000)
         setTimeout(ceroSegundos,3000);
-        setTimeout(obtenerValores, 5000);
-        setTimeout(Espera, 5500);
-        setTimeout(compararJugadas_1, 5500);
+        setTimeout(obtenerValores, 4000);
+        setTimeout(imagenesP1, 4001);
+        setTimeout(Espera, 7000);
+        setTimeout(compararJugadas_1, 7000);
 }
 
 const ronda = setInterval(tiempoEspera, 10000);
 
-setTimeout(Detener, 16000);
+setTimeout(Detener, 28000);
 
-setInterval(definirGanador, 20000, PuntajeP1, PuntajeP2)
+setInterval(definirGanador, 29000, PuntajeP1, PuntajeP2)
 
 function siguienteRonda(){
     numronda+=1;
@@ -183,6 +174,8 @@ function Detener(){
 
 function tresSegundos(){
     document.querySelector('#SigRonda').textContent = `Siguiente ronda en 3`
+    document.querySelector('#p1-invalido').textContent = '';
+    document.querySelector('#p2-invalido').textContent = '';
 }
 function dosSegundos(){
     document.querySelector('#SigRonda').textContent = `Siguiente ronda en 2`
@@ -195,6 +188,7 @@ function ceroSegundos(){
 }
 function Espera(){
     document.querySelector('#SigRonda').textContent = `Espera...`
+    imgP1.src="./img/void.png"
 }
 
 function definirGanador(){
@@ -202,15 +196,23 @@ function definirGanador(){
         document.querySelector('#NumRonda').textContent = 'Ganaste :D';
     }else if(PuntajeP1 < PuntajeP2){
         document.querySelector('#NumRonda').textContent = 'Perdiste :(';
-    }else if(PuntajeP1 == PuntajeP2){
-        document.querySelector('#NumRonda').textContent = 'Empate ö';
     }else{
-        document.querySelector('#NumRonda').textContent = 'Watefok final secreto- no sé qué hiciste pero espero estés orgulloso :)';
+        document.querySelector('#NumRonda').textContent = 'Empate ö';
     }
 }
 
 function imagenesP1(){
     if(jugadaP1=="1"){
-        
+        imgP1.src="./img/piedra.png"
+    }else if(jugadaP1=="2"){
+        imgP1.src="./img/papel.png"
+    }else if(jugadaP1=="3"){
+        imgP1.src="./img/tijeras.png"
+    }else if(jugadaP1=="4"){
+        imgP1.src="./img/lagarto.png"
+    }else if(jugadaP1=="5"){
+        imgP1.src="./img/spock.png"
+    }else{
+        imgP1.src="./img/void.png"
     }
 }
