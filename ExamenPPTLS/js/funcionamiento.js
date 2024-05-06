@@ -20,20 +20,19 @@ var masPuntajeP2 = 0;
 var jugadaP1=0;
 var jugadaP2=0;
 var opciones = new Array( 1, 2, 3, 4, 5);
+var numronda = 0;
 
 function obtenerValores(){
     jugadaP1 = document.querySelector('#p1-input').value;
-    alert("Jugada P1 "+jugadaP1)
 }
 
 function compararJugadas_1(){
-    alert("entra")
     var rnd = Math.random();
     jugadaP2 = Math.floor(rnd*(opciones.length));
-    alert("Jugada P2 "+jugadaP2)
     if(document.querySelector('#p1-input').value=="1"){
         if(jugadaP2=="0"){
-            alert(Empate)
+            document.querySelector('#p1-invalido').textContent = 'Empate';
+            document.querySelector('#p2-invalido').textContent = 'Empate';
         }else if(jugadaP2=="1"){
             PuntajeP2=PuntajeP2+1;
             document.querySelector('#p2-output').textContent = 'Puntuación: '+PuntajeP2;
@@ -56,10 +55,11 @@ function compararJugadas_1(){
     }else if(document.querySelector('#p1-input').value == "5"){
         compararJugadas_5(jugadaP2);
     }else if(document.querySelector('#p1-input').value < 1 || document.querySelector('#p1-input').value > 5){
-        alert("Jugada inválida")
+        document.querySelector('#p1-invalido').textContent = 'Jugada inválida';
     }else{
         alert("Jugada inválida")
     }
+    rfkgkjñ=dnjf49-fji59=dnjfj;
 }
 
 /*
@@ -135,7 +135,6 @@ function compararJugadas_4(){
 }
 
 function compararJugadas_5(){
-    alert("entra de")
         if(jugadaP2=="0"){
             PuntajeP1+=1;
             document.querySelector('#p1-output').textContent = 'Puntuación: '+PuntajeP1;
@@ -157,13 +156,29 @@ function compararJugadas_5(){
 }
 
 function tiempoEspera(){
-    tresSegundos();
-    setTimeout(dosSegundos, 1000);
-    setTimeout(unSegundo, 2000)
-    setTimeout(ceroSegundos,3000);
-    setTimeout(obtenerValores, 5000);
-    setTimeout(Espera, 5000);
-    setTimeout(compararJugadas_1, 6000);
+        tresSegundos();
+        siguienteRonda();
+        setTimeout(dosSegundos, 1000);
+        setTimeout(unSegundo, 2000)
+        setTimeout(ceroSegundos,3000);
+        setTimeout(obtenerValores, 5000);
+        setTimeout(Espera, 5500);
+        setTimeout(compararJugadas_1, 5500);
+}
+
+const ronda = setInterval(tiempoEspera, 10000);
+
+setTimeout(Detener, 16000);
+
+setInterval(definirGanador, 20000, PuntajeP1, PuntajeP2)
+
+function siguienteRonda(){
+    numronda+=1;
+    document.querySelector('#NumRonda').textContent = 'Ronda '+numronda;
+}
+
+function Detener(){
+    clearInterval(ronda);
 }
 
 function tresSegundos(){
@@ -180,4 +195,22 @@ function ceroSegundos(){
 }
 function Espera(){
     document.querySelector('#SigRonda').textContent = `Espera...`
+}
+
+function definirGanador(){
+    if(PuntajeP1 > PuntajeP2){
+        document.querySelector('#NumRonda').textContent = 'Ganaste :D';
+    }else if(PuntajeP1 < PuntajeP2){
+        document.querySelector('#NumRonda').textContent = 'Perdiste :(';
+    }else if(PuntajeP1 == PuntajeP2){
+        document.querySelector('#NumRonda').textContent = 'Empate ö';
+    }else{
+        document.querySelector('#NumRonda').textContent = 'Watefok final secreto- no sé qué hiciste pero espero estés orgulloso :)';
+    }
+}
+
+function imagenesP1(){
+    if(jugadaP1=="1"){
+        
+    }
 }
