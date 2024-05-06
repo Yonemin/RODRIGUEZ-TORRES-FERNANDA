@@ -160,20 +160,21 @@ function tiempoEspera(){
         setTimeout(compararJugadas_1, 4000);
 }
 
-const ronda = setInterval(tiempoEspera, 8000);
-
-setTimeout(Detener, 20000);
-
-setInterval(definirGanador, 21000, PuntajeP1, PuntajeP2)
+function inicioJuego(){   
+    var ronda = setInterval(tiempoEspera, 8000); 
+    tiempoEspera();
+    setTimeout(clearInterval, 20000, ronda);
+    setInterval(definirGanador, 21000, PuntajeP1, PuntajeP2)
+}
 
 function siguienteRonda(){
     numronda+=1;
     document.querySelector('#NumRonda').textContent = 'Ronda '+numronda;
 }
-
+/*
 function Detener(){
     clearInterval(ronda);
-}
+}*/
 
 function tresSegundos(){
     document.querySelector('#SigRonda').textContent = `Siguiente ronda en 3`
@@ -197,11 +198,6 @@ function Espera(){
     imagenesP1();
     imagenesP2(jugadaP2);
 }
-/*
-function noVisible(){
-    imgP1.src="./img/void.png"
-    imgP2.src="./img/void.png"
-}*/
 
 function definirGanador(){
     if(PuntajeP1 > PuntajeP2){
