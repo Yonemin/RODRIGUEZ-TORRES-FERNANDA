@@ -59,6 +59,8 @@ function compararJugadas_1(){
     }else{
         alert("Jugada inválida")
     }
+    imgP1.src="./img/void.png";
+    imgP2.src="./img/void.png";
 }
 
 function compararJugadas_2(){
@@ -152,16 +154,17 @@ function tiempoEspera(){
         setTimeout(unSegundo, 2000)
         setTimeout(ceroSegundos,3000);
         setTimeout(obtenerValores, 4000);
-        setTimeout(imagenesP1, 4001);
-        setTimeout(Espera, 7000);
-        setTimeout(compararJugadas_1, 7000);
+        /*setTimeout(imagenesP1, 4002);
+        setTimeout(imagenesP2, 4002);*/
+        setTimeout(Espera, 4001);
+        setTimeout(compararJugadas_1, 4000);
 }
 
-const ronda = setInterval(tiempoEspera, 10000);
+const ronda = setInterval(tiempoEspera, 8000);
 
-setTimeout(Detener, 28000);
+setTimeout(Detener, 20000);
 
-setInterval(definirGanador, 29000, PuntajeP1, PuntajeP2)
+setInterval(definirGanador, 21000, PuntajeP1, PuntajeP2)
 
 function siguienteRonda(){
     numronda+=1;
@@ -176,6 +179,9 @@ function tresSegundos(){
     document.querySelector('#SigRonda').textContent = `Siguiente ronda en 3`
     document.querySelector('#p1-invalido').textContent = '';
     document.querySelector('#p2-invalido').textContent = '';
+    imgP1.src="./img/void.png"
+    imgP2.src="./img/void.png"
+
 }
 function dosSegundos(){
     document.querySelector('#SigRonda').textContent = `Siguiente ronda en 2`
@@ -188,8 +194,14 @@ function ceroSegundos(){
 }
 function Espera(){
     document.querySelector('#SigRonda').textContent = `Espera...`
-    imgP1.src="./img/void.png"
+    imagenesP1();
+    imagenesP2(jugadaP2);
 }
+/*
+function noVisible(){
+    imgP1.src="./img/void.png"
+    imgP2.src="./img/void.png"
+}*/
 
 function definirGanador(){
     if(PuntajeP1 > PuntajeP2){
@@ -214,5 +226,21 @@ function imagenesP1(){
         imgP1.src="./img/spock.png"
     }else{
         imgP1.src="./img/void.png"
+    }
+}
+
+function imagenesP2(){
+    if(jugadaP2=="0"){
+        imgP2.src="./img/piedra2.png"
+    }else if(jugadaP2=="1"){
+        imgP2.src="./img/papel2.png"
+    }else if(jugadaP2=="2"){
+        imgP2.src="./img/tijeras2.png"
+    }else if(jugadaP2=="3"){
+        imgP2.src="./img/lagarto2.png"
+    }else if(jugadaP2=="4"){
+        imgP2.src="./img/spock2.png"
+    }else{
+        imgP2.src="./img/void.png"
     }
 }
